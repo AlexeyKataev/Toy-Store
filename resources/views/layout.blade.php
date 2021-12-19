@@ -10,6 +10,7 @@
 	<link href="{{ asset('css/nullable.css')}}" rel="stylesheet">
 	<link href="{{ asset('css/wrappers.css')}}" rel="stylesheet">
 	<link href="{{ asset('css/items.css')}}" rel="stylesheet">
+	<script src="{{ asset('js/viewScripts.js')}}"></script>
 	<title>Store</title>
 </head>
 <body>
@@ -23,8 +24,12 @@
 			</div>
 			<menu class="header-menu">
 				<a href="" class="btn-header">Категории</a>
+				@if(session()->has('qwick'))
 				<a href="/Profile/Orders" class="btn-header">Заказы</a>
 				<a href="" class="btn-header">Личный кабинет</a>
+				@else
+				<a href="/Profile/CreateAccount" class="btn-header">Регистрация</a>
+				@endif
 			</menu>
 		</div>
 	</header>

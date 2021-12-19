@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/Profile/Orders', function () {
     return view('orders');
 });
+
+Route::get('/Profile/CreateAccount', 
+	[\App\Http\Controllers\AccountController::class, 'createAccount']
+);
